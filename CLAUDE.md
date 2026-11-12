@@ -29,6 +29,14 @@ People request changes by mentioning `@claude` in a GitHub issue. Your job: make
 - Do not invent numbers or test results. If a number is needed and not given, use a placeholder like `[__ m]`.
 - Change only what was asked. Do not restyle or rewrite other slides.
 
+## Photos sent in the issue
+
+- People attach photos directly in the issue or comment (drag and drop). They are downloaded for you to a local folder (look for the image files mentioned in your context, e.g. under `/tmp/github-images/`); if you only see a `https://github.com/user-attachments/...` URL, download it with `curl -L -o`.
+- Save each photo into `assets/` with a short lowercase name (`field-antenna-1.jpg`), keep jpg/png. If a photo is larger than 2500 px on the long side or over 1.5 MB, shrink it first: `python3 -c "from PIL import Image; im=Image.open('in'); im.thumbnail((2500,2500)); im.convert('RGB').save('assets/x.jpg', quality=85)"` (install Pillow with `pip install pillow` if needed).
+- Place it with the existing `.ph` pattern (`<div class="ph" style="left:..mm;top:..mm;width:..mm;height:..mm;background-image:url(assets/x.jpg);background-position:center"></div>`), optionally with a `.cap` caption below, like other photo slides.
+- Photos uploaded to `assets/` through the GitHub website can be referenced the same way by name.
+- Commit the image files together with `index.html`.
+
 ## Adding, removing, reordering slides
 
 - Add/remove/move whole `<section>` blocks, then update the `NN / TT` footer on every slide (TT = total slide count). The cover has no footer.
