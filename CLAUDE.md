@@ -23,7 +23,7 @@ People request changes by mentioning `@claude` in a GitHub issue. Your job: make
 ## Writing rules
 
 - Language: English. Audience is a CEO/customer: plain words, no deep technical details unless asked.
-- Brand is written `RIGHT&ABOVE` in text (no spaces), except where it already appears otherwise in the footer.
+- Brand is written `RIGHT&ABOVE` in text (no spaces), including the footer.
 - Never use the em dash character (U+2014). Use a plain hyphen `-`.
 - Keep a non-breaking space between a number and its unit (`10&nbsp;W`, `2.7&nbsp;GHz`).
 - Do not invent numbers or test results. If a number is needed and not given, use a placeholder like `[__ m]`.
