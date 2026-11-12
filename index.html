@@ -1,0 +1,173 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Compact EW System</title><style>
+@font-face { font-family: "Russo"; src: url(fonts/RussoOne-Regular.ttf); }
+@font-face { font-family: "Onest"; src: url(fonts/Onest-VF.ttf); font-weight: 100 900; }
+@page { size: 297mm 167mm; margin: 0; }
+:root { --bg: #181A20; --blk: #20242C; --or: #00AF4C; --blue: #00A4D6; --violet: #4C449A; --txt: #F2F5F7; --sec: #B7C2CE; --line: #343a45;
+        --ok: #00AF4C; --part: #F2B33D; --no: #E5584A; --mark: #7d8896; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 11pt/1.5 Onest; color: var(--txt); }
+.slide { position: relative; width: 297mm; height: 167mm; overflow: hidden; background: var(--bg); break-after: page; }
+.abs { position: absolute; }
+.ph { position: absolute; background-size: cover; background-position: center; }
+.kick { font: 500 9pt Onest; color: var(--sec); margin-bottom: 1.2mm; }
+h1, h2 { font-family: Russo; font-weight: 400; text-transform: uppercase; color: var(--or); margin: 0; line-height: 1.08; }
+.sub2 { font: 500 12pt Onest; color: var(--sec); margin-top: 1.6mm; }
+.bh { font: 600 13pt Onest; color: var(--txt); margin: 0 0 2mm; }
+.dash { display: flex; align-items: flex-start; gap: 3.5mm; font: 500 11pt/1.45 Onest; color: var(--txt); }
+.dash::before { content: ""; width: 5mm; height: .3mm; background: var(--mark); flex: none; margin-top: 3.2mm; }
+.st { display: inline-flex; align-items: center; gap: 2mm; font: 600 10.5pt Onest; white-space: nowrap; }
+.st i { width: 5.2mm; height: 5.2mm; display: grid; place-items: center; font: 700 8pt Onest; font-style: normal; color: #1a1a1a; }
+.st.ok i { background: var(--ok); } .st.part i { background: var(--part); } .st.no i { background: var(--no); color: #fff; } .st.na i { background: #6b707c; color: #fff; }
+.st.ok { color: #3ed67b; } .st.part { color: var(--part); } .st.no { color: #f0837a; } .st.na { color: var(--sec); }
+table { border-collapse: collapse; width: 100%; }
+th { font: 600 10pt Onest; color: var(--sec); text-align: left; padding: 0 2.6mm 2.2mm; border-bottom: .4mm solid #5b6573; }
+td { padding: 2.6mm 2.6mm; border-bottom: .25mm solid var(--line); vertical-align: middle; font-size: 11pt; }
+.tight td { padding: 1.5mm 2.6mm; }
+.roomy td { padding: 3.6mm 2.6mm; }
+td.r, th.r { text-align: right; }
+td.k { color: var(--sec); white-space: nowrap; }
+td.n { font-weight: 600; white-space: nowrap; }
+.foot { position: absolute; left: 14mm; right: 14mm; bottom: 5mm; display: flex; justify-content: space-between; align-items: center; font: 500 8pt Onest; color: var(--sec); }
+.bar { position: absolute; left: 0; top: 0; width: 5mm; height: 167mm; background: linear-gradient(180deg,var(--blue) 0 33.3%,var(--or) 33.3% 66.6%,var(--violet) 66.6%); }
+.blk { background: var(--blk); padding: 5mm 6mm; }
+.note { font-size: 9.5pt; line-height: 1.45; color: var(--sec); }
+.cap { font-size: 9.5pt; color: var(--sec); margin-top: 1.5mm; }
+.big { font: 700 32pt/1 Onest; color: var(--txt); letter-spacing: -.01em; }
+.big small { font: 600 15pt Onest; color: var(--sec); letter-spacing: 0; }
+.lbl { font: 600 12.5pt Onest; color: var(--txt); margin-top: 2.5mm; }
+.qual { font: 400 11pt/1.4 Onest; color: var(--sec); margin-top: 1mm; }
+.chip { background: var(--blk); padding: 3mm 4.5mm; font: 600 11.5pt Onest; }
+.arr { color: var(--sec); font-size: 14pt; }
+
+.lead { font: 400 13pt/1.45 Onest; color: #E6EBF0; }
+.cardt { font: 600 14pt Onest; color: var(--txt); margin: 3mm 0 1.5mm; }
+.cardq { font: 400 11pt/1.45 Onest; color: var(--sec); }
+.num { font: 400 12pt Russo; color: var(--or); }
+.viz { font: 500 8.5pt Onest; color: #8C96A3; }
+.tag { display: inline-block; padding: 1.2mm 3.5mm; border-radius: 5mm; font: 600 9.5pt Onest; }
+.done { background: var(--or); color: #101216; }
+.now { background: #F2B33D; color: #101216; }
+.next { border: .35mm solid #5b6573; color: var(--sec); }
+.ph { border-radius: 2.5mm; }
+
+@media screen {
+  body { background: #07080a; padding: 6mm 0 20mm; }
+  .slide { margin: 0 auto 6mm; zoom: var(--z, 1); box-shadow: 0 2mm 8mm rgba(0,0,0,.6); }
+  .dl { position: fixed; right: 16px; top: 16px; z-index: 9; background: #101216; color: #fff; border: 1px solid #3a4250;
+        border-radius: 8px; padding: 8px 14px; font: 600 14px Onest, sans-serif; text-decoration: none; }
+}
+@media print { .dl { display: none; } }
+</style></head><body>
+<a class="dl" href="RAA_RER-REB_2026-11.pdf" download>PDF</a>
+<script>function fit(){var w=Math.min(innerWidth-32,1600)/(297*96/25.4);document.body.style.setProperty('--z',Math.max(.2,w).toFixed(3))}addEventListener('resize',fit);fit();</script>
+
+
+<section class="slide">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 60% 75% at 72% 52%,#2A2F38 0,#1A1D23 55%,#111317 100%)"></div>
+  <div class="bar"></div>
+  <div class="abs" style="left:150mm;top:118mm;width:135mm;height:22mm;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 70%)"></div>
+  <img src="assets/device-viz.png" class="abs" style="left:138mm;top:22mm;width:150mm;filter:drop-shadow(0 6mm 8mm rgba(0,0,0,.55))">
+  <div class="abs viz" style="right:14mm;top:138mm">Product visualization</div>
+  <img src="assets/logo-light.svg" class="abs" style="left:18mm;top:13mm;height:8mm">
+  <h1 class="abs" style="left:18mm;top:43mm;width:120mm;font-size:30pt;color:#fff;text-transform:none;line-height:1.1">Compact<br>EW System</h1>
+  <div class="abs lead" style="left:18mm;top:76mm;width:115mm">Protects our strike drones from FPV interceptors. Hears the interceptor's video link and jams it by itself.</div>
+  <div class="abs" style="left:18mm;top:104mm;display:flex;gap:3mm">
+    <span class="tag done">Detect</span><span class="tag" style="border:.35mm solid rgba(255,255,255,.7);color:#fff">Jam</span>
+    <span class="tag" style="border:.35mm solid rgba(255,255,255,.7);color:#fff">Repeat</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">What it does</div><h2 style="font-size:19pt">Detect. Jam. Repeat. Automatically.</h2></div>
+  <div class="abs" style="left:14mm;top:38mm;right:14mm;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm"><div class="blk" style="border-radius:3mm;padding:6mm"><div style="display:flex;justify-content:space-between;align-items:center"><svg viewBox="0 0 24 24" style="width:13mm;height:13mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M7 12a5 5 0 0 1 10 0"/><path d="M10 12a2 2 0 0 1 4 0"/><path d="M12 12v8"/></svg><span class="num">01</span></div><div class="cardt">Listen</div><div class="cardq">The detector listens to the air around our drone all the time.</div></div><div class="blk" style="border-radius:3mm;padding:6mm"><div style="display:flex;justify-content:space-between;align-items:center"><svg viewBox="0 0 24 24" style="width:13mm;height:13mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="num">02</span></div><div class="cardt">Recognise</div><div class="cardq">It tells an interceptor's video signal apart from Wi-Fi, phones and noise.</div></div><div class="blk" style="border-radius:3mm;padding:6mm"><div style="display:flex;justify-content:space-between;align-items:center"><svg viewBox="0 0 24 24" style="width:13mm;height:13mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span class="num">03</span></div><div class="cardt">Jam</div><div class="cardq">The jammer switches on automatically for 30 seconds.</div></div><div class="blk" style="border-radius:3mm;padding:6mm"><div style="display:flex;justify-content:space-between;align-items:center"><svg viewBox="0 0 24 24" style="width:13mm;height:13mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-3-6.3"/><path d="M20 3v5h-5"/></svg><span class="num">04</span></div><div class="cardt">Check again</div><div class="cardq">It pauses, listens again and repeats while the interceptor is near.</div></div></div>
+  <div class="ph" style="left:14mm;top:100mm;width:130mm;height:46mm;background-image:url(assets/rer-panel-alarm.jpg);background-position:center 40%"></div>
+  <div class="abs" style="left:150mm;top:104mm;width:133mm">
+    <div class="cardt" style="margin-top:0">A simple panel</div>
+    <div class="dash" style="margin-bottom:2mm"><span><b style="color:#3ed67b">Green light</b> · interceptor detected (ELINT)</span></div>
+    <div class="dash" style="margin-bottom:2mm"><span><b style="color:#f0837a">Red light</b> · jammer is on (EW)</span></div>
+    <div class="dash" style="margin-bottom:2mm"><span><b style="color:#fff">Timer</b> · set how long the unit stays on, then it switches off by itself</span></div>
+    <div class="cardq">Photo: a real alarm in the field, both lights on.</div>
+  </div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>02 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">The system</div><h2 style="font-size:19pt">One set: detector + jammer</h2></div>
+  <div class="ph" style="left:14mm;top:34mm;width:120mm;height:112mm;background-image:url(assets/setup-table.jpg);background-position:center 62%"></div>
+  <div class="abs" style="left:32mm;top:57mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>EW antenna</div>
+  <div class="abs" style="left:66mm;top:86mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>EW 50&nbsp;W amplifier</div>
+  <div class="abs" style="left:93mm;top:121mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>Battery</div>
+  <div class="abs" style="left:24mm;top:125mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>ELINT detector</div>
+  <div class="ph" style="left:140mm;top:34mm;width:70mm;height:112mm;background-image:url(assets/reb-amp-antenna.jpg);background-position:center 45%"></div>
+  <div class="abs" style="left:170mm;top:112mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>EW amplifier</div>
+  <div class="abs" style="left:144mm;top:120mm;background:rgba(13,15,18,.86);border:.35mm solid var(--or);border-radius:2mm;padding:1.2mm 3mm;font:600 10pt Onest;color:#fff;white-space:nowrap"><i style="width:2.2mm;height:2.2mm;border-radius:50%;background:var(--or);display:inline-block;margin-right:2mm"></i>EW antenna</div>
+  <div class="abs" style="left:216mm;top:36mm;width:67mm">
+    <div class="cardt" style="margin-top:0">ELINT · the ears</div>
+    <div class="cardq" style="margin-bottom:5mm">Small box with its own battery and antenna. Decides when to jam.</div>
+    <div class="cardt">EW · the voice</div>
+    <div class="cardq" style="margin-bottom:5mm">50&nbsp;W jammer for the same band. Runs from its own battery pack.</div>
+    <div class="cardt">One cable between them</div>
+    <div class="cardq">The detector switches the jammer on and off.</div>
+  </div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>03 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">Inside</div><h2 style="font-size:19pt">Everything in one box</h2></div>
+  <div class="abs" style="left:14mm;top:34mm;width:200mm;height:120.42mm"><img src="assets/internals-viz.png" style="width:100%;height:100%;display:block"><div style="position:absolute;left:5.322%;top:9.250%;width:16.337%;height:5.961%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Power</div><div style="position:absolute;left:30.817%;top:9.250%;width:20.173%;height:5.961%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Battery + protection</div><div style="position:absolute;left:56.683%;top:9.250%;width:11.510%;height:5.961%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Controller</div><div style="position:absolute;left:73.886%;top:9.250%;width:19.431%;height:5.961%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Jammer switch</div><div style="position:absolute;left:7.302%;top:87.770%;width:15.223%;height:6.166%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Amplifier</div><div style="position:absolute;left:30.817%;top:87.359%;width:9.901%;height:6.166%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Protection</div><div style="position:absolute;left:49.876%;top:87.564%;width:9.406%;height:6.166%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Filter</div><div style="position:absolute;left:74.010%;top:87.564%;width:17.574%;height:6.166%;background:#0D0F12;border:.5mm solid #00E05A;border-radius:2mm;display:flex;align-items:center;justify-content:center;font:600 9.5pt Onest;color:#fff;white-space:nowrap">Signal detector</div></div>
+  <div class="abs" style="left:222mm;top:40mm;width:61mm">
+    <div class="cardt" style="margin-top:0">Top row</div><div class="cardq" style="margin-bottom:5mm">Power, battery, the controller that makes the decision and the switch that fires the jammer.</div>
+    <div class="cardt">Bottom row</div><div class="cardq" style="margin-bottom:5mm">The radio receiver: the signal goes left to right from the antenna to the detector.</div>
+    <div class="cardq">Built from off-the-shelf modules. The next version puts them on one board.</div>
+  </div>
+  <div class="abs viz" style="left:222mm;top:140mm;width:61mm">Visualization based on a photo of the device</div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>04 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">Design</div><h2 style="font-size:19pt">Built for the field</h2></div>
+  <div class="abs" style="left:14mm;top:36mm;right:14mm;display:grid;grid-template-columns:repeat(3,1fr);gap:6mm"><div><div style="height:82mm;border-radius:2.5mm;background:url(assets/hero_3q_photo_dark.jpg) center/cover"></div><div class="cardt">Compact case</div><div class="cardq">Ground test version. The flight version will be smaller.</div></div><div><div style="height:82mm;border-radius:2.5mm;background:url(assets/top_photo_dark.jpg) center/cover"></div><div class="cardt">Simple panel</div><div class="cardq">On/off, timer and two status lights.</div></div><div><div style="height:82mm;border-radius:2.5mm;background:url(assets/side_ports_photo_dark.jpg) center/cover"></div><div class="cardt">Plug and go</div><div class="cardq">Antenna, jammer and battery connectors.</div></div></div>
+  <div class="abs viz" style="left:14mm;top:142mm">3D renders of the current case with the real panel</div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>05 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">Proof</div><h2 style="font-size:19pt">Tested outdoors, not only on the bench</h2></div>
+  <div class="ph" style="left:14mm;top:34mm;width:62mm;height:112mm;background-image:url(assets/vtx-mast-field.jpg);background-position:center 38%"></div><div class="abs cap" style="left:14mm;top:146.5mm;width:62mm;margin:0">Test drone transmitter on a mast</div>
+  <div class="ph" style="left:82mm;top:34mm;width:62mm;height:112mm;background-image:url(assets/setup-table.jpg);background-position:center 60%"></div><div class="abs cap" style="left:82mm;top:146.5mm;width:62mm;margin:0">Test position: detector, jammer, laptop</div>
+  <div class="ph" style="left:150mm;top:34mm;width:70mm;height:53mm;background-image:url(assets/rer-panel-alarm.jpg);background-position:center"></div><div class="abs cap" style="left:150mm;top:87.5mm;width:70mm;margin:0">Alarm: drone found, jammer on</div>
+  <div class="ph" style="left:150mm;top:93mm;width:70mm;height:53mm;background-image:url(assets/reb-amp-antenna.jpg);background-position:center 40%"></div><div class="abs cap" style="left:150mm;top:146.5mm;width:70mm;margin:0">Jammer amplifier and antenna</div>
+  <div class="abs" style="left:228mm;top:36mm;width:55mm">
+    <div class="cardt" style="margin-top:0">Three field trials</div>
+    <div class="cardq" style="margin-bottom:5mm">6, 14 and 29 October 2026.</div>
+    <div class="cardt">Full cycle works</div>
+    <div class="cardq" style="margin-bottom:5mm">Detect, jam, re-detect, again and again, with no one at the controls.</div>
+    <div class="cardt">Ignores Wi-Fi</div>
+    <div class="cardq">Phones and routers nearby do not trigger the jammer.</div>
+  </div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>06 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">Where we are</div><h2 style="font-size:19pt">Working prototype. Now: range and a production board.</h2></div>
+  <div class="abs" style="left:17mm;top:52.5mm;width:244mm;height:.6mm;background:linear-gradient(90deg,var(--or) 0 50%,#F2B33D 50% 58%,#3a404b 58%)"></div>
+  <div class="abs" style="left:14mm;top:49mm;right:14mm;display:grid;grid-template-columns:repeat(8,1fr);gap:3.5mm"><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:var(--or);margin-bottom:4mm"></div><span class="tag done">Sep</span><div class="cardt" style="font-size:11.5pt">Idea and bench tests</div><div class="cardq" style="font-size:9.5pt">Three ways to find drones compared.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:var(--or);margin-bottom:4mm"></div><span class="tag done">Early Oct</span><div class="cardt" style="font-size:11.5pt">First field trial</div><div class="cardq" style="font-size:9.5pt">Best approach chosen.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:var(--or);margin-bottom:4mm"></div><span class="tag done">Mid Oct</span><div class="cardt" style="font-size:11.5pt">Prototype in a case</div><div class="cardq" style="font-size:9.5pt">Own power, own antenna.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:var(--or);margin-bottom:4mm"></div><span class="tag done">29 Oct</span><div class="cardt" style="font-size:11.5pt">Detector + jammer</div><div class="cardq" style="font-size:9.5pt">Automatic cycle proven outdoors.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:#F2B33D;margin-bottom:4mm"></div><span class="tag now">Now</span><div class="cardt" style="font-size:11.5pt">More range</div><div class="cardq" style="font-size:9.5pt">Goal: 100&nbsp;m against weaker drones.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:#2c313b;border:.6mm solid #5b6573;margin-bottom:4mm"></div><span class="tag next">Next</span><div class="cardt" style="font-size:11.5pt">Flight trials</div><div class="cardq" style="font-size:9.5pt">On our mid-range strike drones.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:#2c313b;border:.6mm solid #5b6573;margin-bottom:4mm"></div><span class="tag next">Then</span><div class="cardt" style="font-size:11.5pt">One-board version</div><div class="cardq" style="font-size:9.5pt">Smaller, cheaper, repeatable.</div></div><div style="text-align:left"><div style="width:7mm;height:7mm;border-radius:50%;background:#2c313b;border:.6mm solid #5b6573;margin-bottom:4mm"></div><span class="tag next">Later</span><div class="cardt" style="font-size:11.5pt">New bands</div><div class="cardq" style="font-size:9.5pt">Detect and jam 1.2, 3.3 and 5.8&nbsp;GHz too.</div></div></div>
+  <div class="abs blk" style="left:14mm;top:118mm;right:14mm;border-radius:3mm;display:flex;gap:10mm;align-items:center">
+    <div style="display:flex;gap:3mm;align-items:center"><span class="tag done">Done</span><span class="cardq">4 of 8 stages</span></div>
+    <div class="cardq" style="color:#E6EBF0">The device works end to end. Next: longer range, flight trials on our strike drones, a production board and new bands.</div>
+  </div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>07 / 08</span></div>
+</section>
+
+<section class="slide">
+  <div class="bar"></div><div class="abs" style="left:14mm;top:11mm;right:14mm"><div class="kick">Where it fits</div><h2 style="font-size:19pt">One core, many missions</h2></div>
+  <div class="abs" style="left:14mm;top:32mm;width:182mm;height:116mm;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:4mm"><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-drone.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">Our strike drones</div><div class="cardq" style="font-size:9.5pt">Onboard: blinds FPV interceptors.</div></div><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-position.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">Front-line positions</div><div class="cardq" style="font-size:9.5pt">Dugouts, firing and command posts.</div></div><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-vehicle.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">Vehicles</div><div class="cardq" style="font-size:9.5pt">On the roof: protection on the move.</div></div><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-infra.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">Infrastructure</div><div class="cardq" style="font-size:9.5pt">Substations, bridges, fuel sites.</div></div><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-equipment.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">High-value equipment</div><div class="cardq" style="font-size:9.5pt">Air-defence radars, artillery.</div></div><div style="background:#14181F;border-radius:3mm;padding:3mm 4mm 3.5mm;display:flex;flex-direction:column"><div style="flex:1;min-height:0;background:url(assets/use-depot.png) center/contain no-repeat"></div><div class="cardt" style="margin:1.5mm 0 .5mm;font-size:11.5pt">Depots and hubs</div><div class="cardq" style="font-size:9.5pt">Ammunition stores, logistics points.</div></div></div>
+  <div class="abs" style="left:202mm;top:32mm;width:81mm;height:116mm;border-radius:3mm;padding:6.5mm 6.5mm;background:linear-gradient(160deg,#0f3a24 0,#20242C 55%)">
+    <div class="cardt" style="margin:0 0 1.5mm;color:var(--or)">Tailored to each task</div>
+    <div class="cardq" style="margin-bottom:5mm;font-size:10pt">The same detector and logic. We change only what the job needs:</div>
+    <div style="display:flex;gap:3.5mm;align-items:center;margin-bottom:3.6mm"><svg viewBox="0 0 24 24" style="width:8mm;height:8mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg><div><div style="font:600 11pt Onest;color:#fff">Bands</div><div class="cardq" style="font-size:9.5pt">only the ones the threat uses</div></div></div><div style="display:flex;gap:3.5mm;align-items:center;margin-bottom:3.6mm"><svg viewBox="0 0 24 24" style="width:8mm;height:8mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><div><div style="font:600 11pt Onest;color:#fff">Jamming power</div><div class="cardq" style="font-size:9.5pt">from a short-range module to 50&nbsp;W</div></div></div><div style="display:flex;gap:3.5mm;align-items:center;margin-bottom:3.6mm"><svg viewBox="0 0 24 24" style="width:8mm;height:8mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M7 12a5 5 0 0 1 10 0"/><path d="M10 12a2 2 0 0 1 4 0"/><path d="M12 12v8"/></svg><div><div style="font:600 11pt Onest;color:#fff">Antennas</div><div class="cardq" style="font-size:9.5pt">all-round or aimed at a sector</div></div></div><div style="display:flex;gap:3.5mm;align-items:center;margin-bottom:3.6mm"><svg viewBox="0 0 24 24" style="width:8mm;height:8mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10v4"/><path d="M6 10v4M10 10v4"/></svg><div><div style="font:600 11pt Onest;color:#fff">Power</div><div class="cardq" style="font-size:9.5pt">drone, 12/24 V vehicle, battery pack</div></div></div><div style="display:flex;gap:3.5mm;align-items:center;margin-bottom:3.6mm"><svg viewBox="0 0 24 24" style="width:8mm;height:8mm;color:var(--or)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg><div><div style="font:600 11pt Onest;color:#fff">Case</div><div class="cardq" style="font-size:9.5pt">light, rugged or weather-proof</div></div></div>
+  </div>
+  <div class="foot"><span>RIGHT &amp; ABOVE · Compact EW System</span><span style="display:flex;align-items:center;gap:3mm"><span style="width:30mm;height:.4mm;background:var(--or)"></span>08 / 08</span></div>
+</section>
+
+</body></html>
